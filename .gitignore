@@ -1,0 +1,8 @@
+.vs
+bin
+Content
+Models
+obj
+packages
+Scripts
+*.user

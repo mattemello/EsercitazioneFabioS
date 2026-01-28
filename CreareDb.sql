@@ -1,0 +1,15 @@
+-- CREATE DATABASE TryEsercitazione;
+-- use TryEsercitazione
+
+CREATE TABLE [User] (
+    UserId int PRIMARY KEY IDENTITY(1, 1) NOT NULL,
+    UserName VARCHAR(30) UNIQUE NOT NULL,
+    [PASSWORD] VARCHAR(32) NOT NULL,
+    CreationDate DATETIME2(3) DEFAULT GETDATE() NOT NULL
+) 
+
+CREATE TABLE [Post] (
+    PostId BIGINT PRIMARY KEY IDENTITY(1, 1) NOT NULL, 
+    [UserId] INT NOT NULL FOREIGN KEY REFERENCES [User] (UserId),
+    [Description] VARCHAR(50) NOT NULL
+)
